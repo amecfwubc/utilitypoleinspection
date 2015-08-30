@@ -1,0 +1,9 @@
+/ignoreAccessChecks
+/metadataFile "C:\Users\Md Shahrear Iqbal\Documents\Visual Studio 2015\Projects\AmecFWUPI\AmecFWUPI\obj\x64\Release\ilc\intermediate\ILTransformed\AmecFWUPI.metadata"
+/reflectionMetadataAssemblyName "System.Private.CoreLib"
+/o
+/sharedGenerics
+/ilmergeinfo "C:\Users\Md Shahrear Iqbal\Documents\Visual Studio 2015\Projects\AmecFWUPI\AmecFWUPI\obj\x64\Release\ilc\intermediate\ILTransformed\AmecFWUPI.csv"
+/sharedGenericsMode StandardHeuristics
+/in "C:\Users\Md Shahrear Iqbal\Documents\Visual Studio 2015\Projects\AmecFWUPI\AmecFWUPI\obj\x64\Release\ilc\intermediate\ILTransformed\AmecFWUPI.ilexe"
+/out "C:\Users\Md Shahrear Iqbal\Documents\Visual Studio 2015\Projects\AmecFWUPI\AmecFWUPI\obj\x64\Release\ilc\intermediate\MDIL\AmecFWUPI.mdilexe"

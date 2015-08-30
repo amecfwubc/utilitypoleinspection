@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>DESKTOP-4KF0UB9</Machine>
+    <WindowsUser>Md Shahrear Iqbal</WindowsUser>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetOsVersion>10.0</TargetOsVersion>
+    <TargetOsDescription>Windows 10.0</TargetOsDescription>
+    <SolutionConfiguration>Release|x64</SolutionConfiguration>
+    <PackageArchitecture>x64</PackageArchitecture>
+    <PackageIdentityName>3e824120-a0d8-4996-bc94-3821fef00a30</PackageIdentityName>
+    <IntermediateOutputPath>C:\Users\Md Shahrear Iqbal\Documents\Visual Studio 2015\Projects\AmecFWUPI\AmecFWUPI\obj\x64\Release\</IntermediateOutputPath>
+    <RegisteredManifestChecksum>C07C6CC5A880E1D9C1BE8A347D0FA7027739BFB3E586A64A56F7AC7CB6958F09</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>3e824120-a0d8-4996-bc94-3821fef00a30_1.0.0.0_x64__4kpw9mtsegbrg</RegisteredPackageMoniker>
+    <RegisteredUserModeAppID>3e824120-a0d8-4996-bc94-3821fef00a30_4kpw9mtsegbrg!App</RegisteredUserModeAppID>
+    <RegisteredPackageID>3e824120-a0d8-4996-bc94-3821fef00a30</RegisteredPackageID>
+    <RegisteredPackagePublisher>CN=Md Shahrear Iqbal</RegisteredPackagePublisher>
+    <RegisteredVersion>1.0.0.0</RegisteredVersion>
+    <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="C:\Users\Md Shahrear Iqbal\Documents\Visual Studio 2015\Projects\AmecFWUPI\AmecFWUPI\bin\x64\Release\ilc\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2015-08-19T20:49:08.041</Modified>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="C:\Users\Md Shahrear Iqbal\Documents\Visual Studio 2015\Projects\AmecFWUPI\AmecFWUPI\bin\x64\Release\ilc\AmecFWUPI.dll">
+      <PackagePath>AmecFWUPI.dll</PackagePath>
+      <Modified>2015-08-19T20:49:06.677</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Md Shahrear Iqbal\Documents\Visual Studio 2015\Projects\AmecFWUPI\AmecFWUPI\bin\x64\Release\ilc\AmecFWUPI.exe">
+      <PackagePath>AmecFWUPI.exe</PackagePath>
+      <Modified>2015-08-19T20:49:07.953</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Md Shahrear Iqbal\Documents\Visual Studio 2015\Projects\AmecFWUPI\AmecFWUPI\bin\x64\Release\ilc\ApplicationInsights.config">
+      <PackagePath>ApplicationInsights.config</PackagePath>
+      <Modified>2015-08-13T03:53:23.866</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Md Shahrear Iqbal\Documents\Visual Studio 2015\Projects\AmecFWUPI\AmecFWUPI\bin\x64\Release\ilc\Assets\ameclogo.scale-100.png">
+      <PackagePath>Assets\ameclogo.scale-100.png</PackagePath>
+      <Modified>2015-08-14T01:24:11.240</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Md Shahrear Iqbal\Documents\Visual Studio 2015\Projects\AmecFWUPI\AmecFWUPI\bin\x64\Release\ilc\Assets\LockScreenLogo.scale-200.png">
+      <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
+      <Modified>2015-06-05T02:32:06.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Md Shahrear Iqbal\Documents\Visual Studio 2015\Projects\AmecFWUPI\AmecFWUPI\bin\x64\Release\ilc\Assets\SplashScreen.scale-100.png">
+      <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
+      <Modified>2015-08-14T01:07:44.723</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Md Shahrear Iqbal\Documents\Visual Studio 2015\Projects\AmecFWUPI\AmecFWUPI\bin\x64\Release\ilc\Assets\SplashScreen.scale-200.png">
+      <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
+      <Modified>2015-08-14T00:58:51.614</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Md Shahrear Iqbal\Documents\Visual Studio 2015\Projects\AmecFWUPI\AmecFWUPI\bin\x64\Release\ilc\Assets\Square150x150Logo.scale-200.png">
+      <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
+      <Modified>2015-06-05T02:32:06.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Md Shahrear Iqbal\Documents\Visual Studio 2015\Projects\AmecFWUPI\AmecFWUPI\bin\x64\Release\ilc\Assets\Square44x44Logo.scale-200.png">
+      <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
+      <Modified>2015-06-05T02:32:06.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Md Shahrear Iqbal\Documents\Visual Studio 2015\Projects\AmecFWUPI\AmecFWUPI\bin\x64\Release\ilc\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+      <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
+      <Modified>2015-06-05T02:32:06.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Md Shahrear Iqbal\Documents\Visual Studio 2015\Projects\AmecFWUPI\AmecFWUPI\bin\x64\Release\ilc\Assets\StoreLogo.png">
+      <PackagePath>Assets\StoreLogo.png</PackagePath>
+      <Modified>2015-06-05T02:32:06.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Md Shahrear Iqbal\Documents\Visual Studio 2015\Projects\AmecFWUPI\AmecFWUPI\bin\x64\Release\ilc\Assets\Wide310x150Logo.scale-200.png">
+      <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
+      <Modified>2015-06-05T02:32:06.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Md Shahrear Iqbal\Documents\Visual Studio 2015\Projects\AmecFWUPI\AmecFWUPI\bin\x64\Release\ilc\ClrCompression.dll">
+      <PackagePath>ClrCompression.dll</PackagePath>
+      <Modified>2015-08-13T03:52:45.460</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Md Shahrear Iqbal\Documents\Visual Studio 2015\Projects\AmecFWUPI\AmecFWUPI\bin\x64\Release\ilc\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+      <Modified>2015-08-19T20:47:08.485</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Md Shahrear Iqbal\Documents\Visual Studio 2015\Projects\AmecFWUPI\AmecFWUPI\bin\x64\Release\ilc\sqlite3.dll">
+      <PackagePath>sqlite3.dll</PackagePath>
+      <Modified>2015-08-19T14:18:59.011</Modified>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\">
+      <Name>Microsoft.VCLibs.140.00</Name>
+      <Version>14.0.22929.0</Version>
+      <Architecture>ARM</Architecture>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00, MinVersion = 14.0.22929.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\.\AppX\Retail\ARM\Microsoft.VCLibs.ARM.14.00.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\">
+      <Name>Microsoft.VCLibs.140.00</Name>
+      <Version>14.0.22929.0</Version>
+      <Architecture>x64</Architecture>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00, MinVersion = 14.0.22929.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\.\AppX\Retail\x64\Microsoft.VCLibs.x64.14.00.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\">
+      <Name>Microsoft.VCLibs.140.00</Name>
+      <Version>14.0.22929.0</Version>
+      <Architecture>x86</Architecture>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00, MinVersion = 14.0.22929.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\.\AppX\Retail\x86\Microsoft.VCLibs.x86.14.00.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.NET.Native.Runtime.1.1\1.1\">
+      <Name>Microsoft.NET.Native.Runtime.1.1</Name>
+      <Version>1.0.0.0</Version>
+      <Architecture>ARM</Architecture>
+      <FrameworkIdentity>Name = Microsoft.NET.Native.Runtime.1.1, MinVersion = 1.0.0.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.NET.Native.Runtime.1.1\1.1\.\AppX\ARM\Microsoft.NET.Native.Runtime.1.1.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.NET.Native.Runtime.1.1\1.1\">
+      <Name>Microsoft.NET.Native.Runtime.1.1</Name>
+      <Version>1.0.0.0</Version>
+      <Architecture>x64</Architecture>
+      <FrameworkIdentity>Name = Microsoft.NET.Native.Runtime.1.1, MinVersion = 1.0.0.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.NET.Native.Runtime.1.1\1.1\.\AppX\x64\Microsoft.NET.Native.Runtime.1.1.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.NET.Native.Runtime.1.1\1.1\">
+      <Name>Microsoft.NET.Native.Runtime.1.1</Name>
+      <Version>1.0.0.0</Version>
+      <Architecture>x86</Architecture>
+      <FrameworkIdentity>Name = Microsoft.NET.Native.Runtime.1.1, MinVersion = 1.0.0.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.NET.Native.Runtime.1.1\1.1\.\AppX\x86\Microsoft.NET.Native.Runtime.1.1.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\">
+      <Name>Microsoft.VCLibs.140.00</Name>
+      <Version>14.0.22929.0</Version>
+      <Architecture>ARM</Architecture>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00, MinVersion = 14.0.22929.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\.\AppX\Retail\ARM\Microsoft.VCLibs.ARM.14.00.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\">
+      <Name>Microsoft.VCLibs.140.00</Name>
+      <Version>14.0.22929.0</Version>
+      <Architecture>x64</Architecture>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00, MinVersion = 14.0.22929.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\.\AppX\Retail\x64\Microsoft.VCLibs.x64.14.00.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\">
+      <Name>Microsoft.VCLibs.140.00</Name>
+      <Version>14.0.22929.0</Version>
+      <Architecture>x86</Architecture>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00, MinVersion = 14.0.22929.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\.\AppX\Retail\x86\Microsoft.VCLibs.x86.14.00.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+  </ItemGroup>
+</Project>

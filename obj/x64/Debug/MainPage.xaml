@@ -1,0 +1,16 @@
+﻿<Page
+    x:Class="AmecFWUPI.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:AmecFWUPI"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid RequestedTheme="Light" Background="{ThemeResource SystemControlHighlightListAccentMediumBrush}">
+        <StackPanel HorizontalAlignment="Left" Height="100" Margin="210,185,0,0" VerticalAlignment="Top" Width="311">
+            <Button x:ConnectionId='1' x:Name="btnAddPoleInfo" Content="Add Pole Info" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="42,0,38.2,0"                             />
+        </StackPanel>
+    </Grid>
+</Page>
+

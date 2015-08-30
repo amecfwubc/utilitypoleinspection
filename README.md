@@ -38,4 +38,14 @@ Some advice:
 8. Choose a theme for the app and fix the layout. The layout should be optimized for 8 to 10-inch tablets in landscape mode. However, make sure that it works on all types of screens. Use a menubar on the top of each view. Also, you should leave some space at the bottom when the device is running in the tablet mode or in a windows phone (for the default navigation bar of the Windows 10).
 
 9. Once a basic project is setup and running (Login, Load Tasks, Add Pole Info), we can start adding features. I will be updating the tasks.
+
+
+-----------------------------------In case we need to show a demo in two weeks------------------------------------------------
+1. You can use my project if you wish.
+2. Choose a theme for the app and fix the layout for the tablet you have.
+2. just add a feature to capture images from the camera.
+3. Add a page to show the uploaded data.
+
+
+---------------------------After that, Go back to step 1 above.--------------------------------------------------------------------
   

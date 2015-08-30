@@ -20,23 +20,22 @@ Steps:
 
 6. Remember the cross-cutting concerns (research if you dont know about them): 
 
-Authentication
-Authorization
-Configuration
-Data safety
-Connectivity
-Error Handling
-Logging
-Validation
+  --Authentication
+  --Authorization
+  --Configuration
+  --Data safety
+  --Connectivity
+  --Error Handling
+  --Logging
+  --Validation
 
 7. Start commenting extensively and documenting your code.
+Some advice:
+  -- Variable names of each control should be meaningful.
+  -- Exception handling should be done as higher level as possible.
+  -- Log everything.
 
-8. Some advice:
+8. Choose a theme for the app and fix the layout. The layout should be optimized for 8 to 10-inch tablets in landscape mode. However, make sure that it works on all types of screens. Use a menubar on the top of each view. Also, you should leave some space at the bottom when the device is running in the tablet mode or in a windows phone (for the default navigation bar of the Windows 10).
 
-1. Variable names of each control should be meaningful.
-2. Exception handling should be done as higher level as possible.
-3. Log everything.
-
-9. Choose a theme for the app and fix the layout. The layout should be optimized for 8 to 10-inch tablets in landscape mode. However, make sure that it works on all types of screens. Use a menubar on the top of each view. Also, you should leave some space at the bottom when the device is running in the tablet mode or in a windows phone (for the default navigation bar of the Windows 10).
-
-5. Once a basic project is setup and running (Login, Load Tasks, Add Pole Info), we can start adding features. I will be updating the tasks.
+9. Once a basic project is setup and running (Login, Load Tasks, Add Pole Info), we can start adding features. I will be updating the tasks.
+  

@@ -1,0 +1,60 @@
+﻿<Page xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
+      xmlns:core="using:Microsoft.Xaml.Interactions.Core"
+      x:Class="AmecFWUPI.ViewPoleInfo"
+      mc:Ignorable="d"
+      DataContext="{Binding Main, Source={StaticResource Locator}}">
+
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.906,1.164"
+                                 StartPoint="0.244,-0.159">
+                <GradientStop Color="#FFA20000"
+                              Offset="0" />
+                <GradientStop Color="#FFCD7C10"
+                              Offset="1" />
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <StackPanel Background="White"
+                    Width="500"
+                    HorizontalAlignment="Center"
+                    Height="650"
+                    VerticalAlignment="Center">
+            <Button x:Name="btnLoadTasks" Content="Load Tasks" HorizontalAlignment="Left" Margin="107,66,0,0" VerticalAlignment="Top" Click="btnLoadTasks_Click" Width="124" Height="42" FontSize="18.667" Canvas.ZIndex="-16"/>
+            <!--<DatePicker x:Name="dtPickerLoadTask" HorizontalAlignment="Left" Margin="73,20,0,0" VerticalAlignment="Bottom" Height="40" FontSize="18.667"/>-->
+            <Button x:Name="goBack" Content="Back" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="goBack_Click" Background="#33137A32" Width="101" Margin="314,-35,85,0" FontFamily="Sylfaen" FontSize="17.333"/>
+            <ListView x:Name="lvTasks" HorizontalAlignment="Left" Height="150" Margin="20,29,0,-364" VerticalAlignment="Top" Width="460" Background="AntiqueWhite" 
+                          IsItemClickEnabled="True" SelectionMode="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Width="400" VerticalAlignment="Center">
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="8"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="*"/>
+
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Grid.Column="1" Text="{Binding id}" />
+                            <TextBlock Grid.Column="2" Text="{Binding poleID}" />
+                            <TextBlock Grid.Column="3" Text="{Binding poleType}" />
+                            <TextBlock Grid.Column="4" Text="{Binding adjacentPoleHeight}" />
+                            <TextBlock Grid.Column="5" Text="{Binding transformerLoading}" />
+                            <TextBlock Grid.Column="6" Text="{Binding notes}" />
+                            <!--<TextBlock Grid.Column="7" Text="{Binding pathOfImagesTaken}" />-->
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackPanel>
+    </Grid>
+</Page>

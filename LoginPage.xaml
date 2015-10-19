@@ -1,0 +1,43 @@
+﻿<Page xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
+      xmlns:core="using:Microsoft.Xaml.Interactions.Core"
+      x:Class="AmecFWUPI.LoginPage"
+      mc:Ignorable="d"
+      DataContext="{Binding Main, Source={StaticResource Locator}}">
+
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.906,1.164"
+                                 StartPoint="0.244,-0.159">
+                <GradientStop Color="#FFA20000"
+                              Offset="0" />
+                <GradientStop Color="#FFCD7C10"
+                              Offset="1" />
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <StackPanel Background="#FF18ABDB"
+                    Width="1440"
+                    HorizontalAlignment="Center"
+                    Height="960"
+                    VerticalAlignment="Center">
+            <TextBlock FontSize="30" OpticalMarginAlignment="TrimSideBearings" Margin="15,200,0,0" Foreground="Black" FontWeight="SemiBold" HorizontalAlignment="Center" FontFamily="Baskerville Old Face">UtilityPole Inspection App</TextBlock>
+            <!--<TextBlock x:Name="Title" HorizontalAlignment="Center"  Margin="15,200,0,0" TextWrapping="Wrap" Text="UtilityPole Inspection App" FontStyle="Normal" FontWeight="SemiBold" VerticalAlignment="Top" FontSize="19.333"/>-->
+            <TextBox x:Name="txtLoginID" Margin="0,132,0,20" TextWrapping="Wrap" Text="" Height="31" Width="200" HorizontalAlignment="Center" TextChanged="txtLoginID_TextChanged" PlaceholderText="Type your USER ID"/>
+            <PasswordBox x:Name="txtLoginPass" HorizontalAlignment="Center" Margin="0,1,0,20" VerticalAlignment="Top" Height="31" Width="200" IsPasswordRevealButtonEnabled="true" PlaceholderText="Type your password" ></PasswordBox>
+            <Button x:Name="btnLogin" Content="Log In" HorizontalAlignment="Center" Margin="2,-9,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0.738,-0.279" Click="btnLogin_Click"/>
+            <TextBlock x:Name="txbLoginID" HorizontalAlignment="Center" Margin="-300,-125,0,0" TextWrapping="Wrap" Text="User ID:" VerticalAlignment="Top" FontSize="17.333"/>
+            <TextBlock x:Name="txbLoginPass" HorizontalAlignment="Center" Margin="-300,-69,0,0" TextWrapping="Wrap" Text="Password:" VerticalAlignment="Top" FontSize="17.333"/>
+            <TextBlock x:Name="txtError" Margin="15,50,0,0" TextWrapping="Wrap" Text="" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#FFF11717"/>
+            
+            
+
+
+
+        </StackPanel>
+        
+    </Grid>
+</Page>

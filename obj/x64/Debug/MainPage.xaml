@@ -25,10 +25,12 @@
                     HorizontalAlignment="Center"
                     Height="650"
                     VerticalAlignment="Center">
-            <TextBlock x:ConnectionId='1' x:Name="Title" HorizontalAlignment="Center" Margin="15,58,0,0" TextWrapping="Wrap" Text="Menu Page" FontStyle="Normal" FontWeight="Bold" VerticalAlignment="Top" FontSize="21.333"/>
-            <Button x:ConnectionId='2' x:Name="btnAddPoleInfo" Content="Add Pole Info" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="42,100,38.2,0"                              Width="256" Height="42"/>
-            <Button x:ConnectionId='3' x:Name="btnAddTasks" Content="Add Tasks" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="42,20,38.2,0"                           Width="256" Height="42"/>
-            <Button x:ConnectionId='4' x:Name="btnViewTasks" Content="View Tasks" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="42,20,38.2,0"                            Width="256" Height="42"/>
+            <TextBlock FontSize="30" OpticalMarginAlignment="TrimSideBearings" Margin="15,50,0,0" Foreground="Blue" FontWeight="SemiBold" HorizontalAlignment="Center">UtilityPole Inspection App</TextBlock>
+            <TextBlock x:ConnectionId='1' x:Name="Title" HorizontalAlignment="Center" Foreground="LightCoral" Margin="15,58,0,0" TextWrapping="Wrap" Text="Menu Page" FontStyle="Normal" FontWeight="Bold" VerticalAlignment="Top" FontSize="21.333"/>
+            <Button x:ConnectionId='2' x:Name="btnAddTasks" Content="Add Tasks" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="42,20,38.2,0"                           Width="256" Height="42"/>
+            <Button x:ConnectionId='3' x:Name="btnViewTasks" Content="View Tasks" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="42,20,38.2,0"                            Width="256" Height="42"/>
+            <Button x:ConnectionId='4' x:Name="btnLoadTasks" Content="Import Tasks from Sever" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="42,20,38.2,0"                            Width="256" Height="42"/>
+            <!--<Button x:Name="btnLoadTasks" Content="Load Tasks" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="42,20,38.2,0" Click="btnLoadTasks_Click" Width="256" Height="42"/>-->
         </StackPanel>
     </Grid>
 </Page>

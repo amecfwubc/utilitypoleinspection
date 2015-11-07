@@ -33,16 +33,18 @@ namespace AmecFWUPI
         }
 
         //Method to check the username and password
-        async private void btnLogin_Click(object sender, RoutedEventArgs e)
+        private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
             var UserName = txtLoginID.Text;
             var PassWord = txtLoginPass.Password;
+            
             LogIn(UserName,PassWord);
+            
         }
 
         async private void LogIn(string UserName, string PassWord)
         {
-            
+            progressRing1.IsActive = true;
             var logIn_V = await App._database.CheckLogin(UserName, PassWord);
             //string pass = await App._database.dbFetchPasswordTableLoginInfoAsync(txtLoginID.Text);
 
@@ -60,11 +62,13 @@ namespace AmecFWUPI
                 if (IsValid)
                 {
                     LogIn(UserName, PassWord);
+                    progressRing1.IsActive = false;
                 }
                 else
                 {
                     txtError.Text = "Error in Login";
                     MetroEventSource.Log.Error("Incorrect Password");
+                    progressRing1.IsActive = false;
                 }
             }
         }

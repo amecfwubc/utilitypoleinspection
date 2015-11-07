@@ -19,19 +19,26 @@
             </LinearGradientBrush>
         </Grid.Background>
 
-        <StackPanel Background="CadetBlue"
-                    Width="500"
+        <StackPanel Background="#FF18ABDB"
+                    Width="1440"
                     HorizontalAlignment="Center"
-                    Height="650"
+                    Height="960"
                     VerticalAlignment="Center">
-            <TextBlock x:ConnectionId='1' x:Name="Title" HorizontalAlignment="Center" Margin="15,12,0,0" TextWrapping="Wrap" Text="UtilityPole Inspection App" FontStyle="Normal" FontWeight="SemiBold" VerticalAlignment="Top" FontSize="19.333"/>
-            <TextBox x:ConnectionId='2' x:Name="txtLoginID" HorizontalAlignment="Left" Margin="154,132,0,20" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="31" Width="150"/>
-            <TextBox x:ConnectionId='3' x:Name="txtLoginPass" HorizontalAlignment="Left" Margin="154,1,0,20" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="31" Width="150"/>
-            <Button x:ConnectionId='4' x:Name="btnLogin" Content="Log In" HorizontalAlignment="Left" Margin="174,-9,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0.738,-0.279"                       />
-            <TextBlock x:ConnectionId='5' x:Name="txbLoginID" HorizontalAlignment="Left" Margin="71,-125,0,0" TextWrapping="Wrap" Text="User ID:" VerticalAlignment="Top" FontSize="17.333"/>
-            <TextBlock x:ConnectionId='6' x:Name="txbLoginPass" HorizontalAlignment="Left" Margin="63,-69,0,0" TextWrapping="Wrap" Text="Password:" VerticalAlignment="Top" FontSize="17.333"/>
-            <TextBlock x:ConnectionId='7' x:Name="txtError" HorizontalAlignment="Left" Margin="5,15,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Foreground="#FFF11717"/>
+            <TextBlock FontSize="30" OpticalMarginAlignment="TrimSideBearings" Margin="15,200,0,0" Foreground="Black" FontWeight="SemiBold" HorizontalAlignment="Center" FontFamily="Baskerville Old Face">UtilityPole Inspection App</TextBlock>
+            <!--<TextBlock x:Name="Title" HorizontalAlignment="Center"  Margin="15,200,0,0" TextWrapping="Wrap" Text="UtilityPole Inspection App" FontStyle="Normal" FontWeight="SemiBold" VerticalAlignment="Top" FontSize="19.333"/>-->
+            <TextBox x:ConnectionId='1' x:Name="txtLoginID" Margin="0,132,0,20" TextWrapping="Wrap" Text="" Height="31" Width="200" HorizontalAlignment="Center"                                      PlaceholderText="Type your USER ID"/>
+            <PasswordBox x:ConnectionId='2' x:Name="txtLoginPass" HorizontalAlignment="Center" Margin="0,1,0,20" VerticalAlignment="Top" Height="31" Width="200" IsPasswordRevealButtonEnabled="true" PlaceholderText="Type your password" ></PasswordBox>
+            <Button x:ConnectionId='3' x:Name="btnLogin" Content="Log In" HorizontalAlignment="Center" Margin="2,-9,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0.738,-0.279"                       />
+            <TextBlock x:ConnectionId='4' x:Name="txbLoginID" HorizontalAlignment="Center" Margin="-300,-125,0,0" TextWrapping="Wrap" Text="User ID:" VerticalAlignment="Top" FontSize="17.333"/>
+            <TextBlock x:ConnectionId='5' x:Name="txbLoginPass" HorizontalAlignment="Center" Margin="-300,-69,0,0" TextWrapping="Wrap" Text="Password:" VerticalAlignment="Top" FontSize="17.333"/>
+            <TextBlock x:ConnectionId='6' x:Name="txtError" Margin="15,50,0,0" TextWrapping="Wrap" Text="" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#FFF11717"/>
+            
+            
+
+
+
         </StackPanel>
+        
     </Grid>
 </Page>
 

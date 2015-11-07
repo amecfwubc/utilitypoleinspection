@@ -14,6 +14,11 @@ namespace AmecFWUPI
 {
     sealed partial class App
     {
+
+        public static string URILogin = "http://desktop-9bmhfp2:88/api/poleinfo?UserName=";
+        public static string URIImage = "http://desktop-9bmhfp2:88/api/PoleImage/Get?ImagePath=";
+        public static string URIPoleInfo = "http://desktop-9bmhfp2:88/api/poleinfo";
+
         public static DBAccess _database;
         public App()
         {

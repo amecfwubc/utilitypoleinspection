@@ -1,1 +1,1 @@
-C:\utilitypoleinspection-mustbechanged_v1 (1)_temp\utilitypoleinspection-mustbechanged_v1\AmecFWUPI.csproj;x86
+C:\Users\salva\Documents\GitHub\utilitypoleinspection-mustbechanged_18-10-2015\AmecFWUPI.csproj;x86

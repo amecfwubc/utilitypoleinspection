@@ -15,6 +15,7 @@ using Windows.UI.Input;
 using System.Net.Http;
 using Newtonsoft.Json;
 using System.Text;
+using Windows.Storage.Streams;
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace AmecFWUPI
@@ -29,7 +30,8 @@ namespace AmecFWUPI
         public static SQLiteConnectionWithLock conn;
         public static SQLiteAsyncConnection dbAsyncConnection;
         FileOpenPicker openPicker = new FileOpenPicker();
-        StorageFile file;
+        
+
         public AssignedTaskView()
         {
             this.InitializeComponent();
@@ -45,14 +47,9 @@ namespace AmecFWUPI
 
         async private void LoadPoleList()
         {
-            //var Data = App._database.LoadPoleIDList();
-
+            
             var SqliteData = await dbAsyncConnection.QueryAsync<PoleInfo>("select poleID from PoleInfo where userid='"+LoginInfo.LoginUserID+"'");
-            //drpPoleID.DataContext = SqliteData;
-            //drpPoleID.SelectedValue = "poleID";
-            //drpPoleID.SelectedItem = "poleID";
-
-
+           
             foreach (var itm in SqliteData)
             {
                 drpPoleID.Items.Add(itm.poleID);
@@ -61,28 +58,7 @@ namespace AmecFWUPI
 
         }
 
-        async public void btnAddPhoto_Click(object sender, RoutedEventArgs e)
-        {
-            openPicker.ViewMode = PickerViewMode.Thumbnail;
-            openPicker.SuggestedStartLocation = PickerLocationId.PicturesLibrary;
-            openPicker.FileTypeFilter.Add(".jpg");
-            openPicker.FileTypeFilter.Add(".jpeg");
-            openPicker.FileTypeFilter.Add(".png");
-
-            file = await openPicker.PickSingleFileAsync();
-            if (file != null)
-            {
-                // Application now has read/ write access to the picked file
-                txtBlkPhotos.Text = "Picked photo: " + file.Name;
-                MetroEventSource.Log.Debug("Picked an image file");
-            }
-            else
-            {
-                txtBlkPhotos.Text = "Operation cancelled.";
-            }
-        }
-
-        
+              
         private void goBack_Click(object sender, RoutedEventArgs e)
         {
             Frame.GoBack();
@@ -93,30 +69,9 @@ namespace AmecFWUPI
         {
             try
             {
-                ControlDefaultSetting();
                 var Data = await App._database.dbFetchTasksByPoleIdTablePoleInfoAsync(drpPoleID.SelectedValue.ToString());
-                if (Data == null)
-                {
-                    //
-                    return;
-                }
-                //Data
-                if (Data.poleType == "Simple")
-                {
-                    cbSimple.IsChecked = true;
-                }
-                else if (Data.poleType == "Non Standard")
-                {
-                    cbNonStandard.IsChecked = true;
-                }
-                else if (Data.poleType == "Return")
-                {
-                    cbReturn.IsChecked = true;
-                }
-                else if (Data.poleType == "Vegetation")
-                {
-                    cbVegetation.IsChecked = true;
-                }
+                ControlDefaultSetting();
+                GetPoleTypeCheck();
 
                 txtPoleHeight.Text = Data.adjacentPoleHeight;
                 txbTransformerLoad.Text = Data.transformerLoading;
@@ -131,11 +86,11 @@ namespace AmecFWUPI
                     dtPickerPerformTask.Date = Convert.ToDateTime(Data.dateTaskPerformed);
                 }
                 textBoxNotes.Text = Data.notes;
-                Uri imageUri2 = new Uri(@"C:\Users\salva\AppData\Local\Packages\f867452b-a946-4cec-bc0d-a7793b639c29_we21w4g8rdebr\LocalState\"+Data.poleID+".jpg");
-                imagePreivew.Source = new BitmapImage(imageUri2);
-                
-
-
+                BitmapImage bitmapImage = new BitmapImage();
+                StorageFile file = await ApplicationData.Current.LocalFolder.GetFileAsync(Data.poleID + ".jpg");
+                FileRandomAccessStream stream = (FileRandomAccessStream)await file.OpenAsync(FileAccessMode.Read);
+                bitmapImage.SetSource(stream);
+                imagePreivew.Source = bitmapImage;
             }
             catch (Exception ex)
             {
@@ -143,6 +98,44 @@ namespace AmecFWUPI
             }
 
        }
+        async private void GetPoleTypeCheck()
+        {
+            var Data = await App._database.dbFetchTasksByPoleIdTablePoleInfoAsync(drpPoleID.SelectedValue.ToString());
+            if (Data == null)
+            {
+               return;
+            }
+            //Data
+            if (Data.poleType == "Simple")
+            {
+                cbSimple.IsChecked = true;
+            }
+            else if (Data.poleType == "Non standard")
+            {
+                cbNonStandard.IsChecked = true;
+            }
+            else if (Data.poleType == "Return")
+            {
+                cbReturn.IsChecked = true;
+            }
+            else if (Data.poleType == "Vegetation")
+            {
+                cbVegetation.IsChecked = true;
+            }
+            else if (Data.poleType == "Row")
+            {
+                cbROW.IsChecked = true;
+            }
+            else if (Data.poleType == "Additional Pole")
+            {
+                cbAdditionalPole.IsChecked = true;
+            }
+            else if (Data.poleType == "Enviromental")
+            {
+                cbEnvironmental.IsChecked = true;
+            }
+
+        }
 
         private void ControlDefaultSetting()
         {
@@ -152,6 +145,7 @@ namespace AmecFWUPI
             cbROW.IsChecked = false;
             cbSimple.IsChecked = false;
             cbVegetation.IsChecked = false;
+            cbAdditionalPole.IsChecked = false;
 
             txtPoleHeight.Text = "";
             txbTransformerLoad.Text = "";
@@ -164,14 +158,49 @@ namespace AmecFWUPI
 
         }
 
-        private void Edit_data(object sender, RoutedEventArgs e)
+        private void Local_Update(object sender, RoutedEventArgs e)
         {
-            LocalDataSave();
+           
+                LocalDataSave();
+           
+        }
+        async private void Server_Update(object sender, RoutedEventArgs e)
+        {
+            string SaveStatus = "";
+            
+            try
+            {
+                string poleId = drpPoleID.SelectedValue.ToString();
+                var Data = await App._database.dbFetchTasksByPoleIdTablePoleInfoAsync(drpPoleID.SelectedValue.ToString());
+                if (Data != null)
+                {
+                    Data.poleID = poleId;
+                    Data.notes = textBoxNotes.Text;
+
+                    Data.poleType = GetCheckedPoleType();
+                    Data.adjacentPoleHeight = txtPoleHeight.Text;
+                    Data.transformerLoading = txbTransformerLoad.Text;
+                    Data.TypeID = GetPoleTypeId(Data.poleType);
+                    await dbAsyncConnection.UpdateAsync(Data);
+                    DataUpdateToServer(Data);
+                    SaveStatus = "Successfully Updated";
+                }
+                else
+                {
+                    SaveStatus = "Pole ID is already Exist";
+                }
+
+                txtmsg.Text = SaveStatus;
+            }
+            catch (Exception ex)
+            {
+
+                txtmsg.Text = ex.Message;
+            }
         }
 
         async private void DataUpdateToServer(PoleInfo obj)
         {
-            string URI = "http://desktop-9bmhfp2:88/api/poleinfo";
             try
             {
                 PoelInfo pole = new PoelInfo();
@@ -188,7 +217,7 @@ namespace AmecFWUPI
                 {
                     var serializedProduct = JsonConvert.SerializeObject(pole);
                     var content = new StringContent(serializedProduct, Encoding.UTF8, "application/json");
-                    var result = await client.PostAsync(URI, content);
+                    var result = await client.PostAsync(App.URIPoleInfo, content);
                 }
             }
             catch (Exception ex)
@@ -201,31 +230,25 @@ namespace AmecFWUPI
         {
             string SaveStatus = "";
 
-            string poleId = drpPoleID.SelectedValue.ToString();
             
-            var Data = await App._database.dbFetchTasksByPoleIdTablePoleInfoAsync(drpPoleID.SelectedValue.ToString());
+            
+            
             try
             {
+                string poleId = drpPoleID.SelectedValue.ToString();
+                var Data = await App._database.dbFetchTasksByPoleIdTablePoleInfoAsync(drpPoleID.SelectedValue.ToString());
                 if (Data != null)
                 {
-                    //PoleInfo task = new PoleInfo();
-                    //task.id = Data.id;
-
                     Data.poleID = poleId;
                     Data.notes = textBoxNotes.Text;
-                    //if (file != null)
-                    //{
-                    //    task.pathOfImagesTaken = "\\poleimages\\" + file.Name;
-                    //}
+                   
                     Data.poleType = GetCheckedPoleType();
                     Data.adjacentPoleHeight = txtPoleHeight.Text;
                     Data.transformerLoading = txbTransformerLoad.Text;
-                    //Data.userid = LoginInfo.LoginUserID;
-                    //Data.TaskAssainUserID = LoginInfo.LoginUserID;
-
+                   
                     Data.TypeID = GetPoleTypeId(Data.poleType);
                     await dbAsyncConnection.UpdateAsync(Data);
-                    DataUpdateToServer(Data);
+                    
                     SaveStatus = "Successfully Updated";
                 }
                 else
@@ -282,36 +305,37 @@ namespace AmecFWUPI
             int  PoleTypeID = 0;
             if (PoleType == "Additional Pole")
             {
-                PoleTypeID=11;
+                PoleTypeID = 11;
             }
             else if (PoleType == "Non standard")
             {
-                PoleTypeID = 2;
+                PoleTypeID = 12;
             }
             else if (PoleType == "Simple")
             {
-                PoleTypeID = 10;
+                PoleTypeID = 13;
             }
             else if (PoleType == "Enviromental")
             {
-                PoleTypeID = 12;
+                PoleTypeID = 14;
             }
 
             else if (PoleType == "Row")
             {
-                PoleTypeID = 12;
+                PoleTypeID = 15;
             }
             else if (PoleType == "Vegetation")
             {
-                PoleTypeID = 14;
+                PoleTypeID = 16;
             }
             else if (PoleType == "Return")
             {
-                PoleTypeID = 15;
+                PoleTypeID = 17;
             }
             return PoleTypeID;
         }
 
+        
     }
   
 

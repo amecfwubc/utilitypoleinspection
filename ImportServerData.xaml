@@ -28,6 +28,7 @@
             <Button x:Name="btnLoadTasks" Content="Import" HorizontalAlignment="Left" Margin="107,-100,0,0" VerticalAlignment="Top" Click="btnLoadTasks_Click" Width="124" Height="42" FontSize="18.667" Canvas.ZIndex="-16"/>
             <!--<DatePicker x:Name="dtPickerLoadTask" HorizontalAlignment="Left" Margin="73,20,0,0" VerticalAlignment="Bottom" Height="40" FontSize="18.667"/>-->
             <Button x:Name="goBack" Content="Back" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="goBack_Click" Background="#33137A32" Width="101" Margin="314,-160,85,0" FontFamily="Sylfaen" FontSize="17.333" Height="41"/>
+            <ProgressRing x:Name="progressRing1" IsActive="False"/>
         </StackPanel>
     </Grid>
 </Page>

@@ -29,13 +29,13 @@
             <TextBlock x:ConnectionId='2' x:Name="txbLoginID" HorizontalAlignment="Left" Margin="15,-50,0,0" TextWrapping="Wrap" Text="Pole ID:" VerticalAlignment="Top" FontSize="17.333"/>
             
             <Grid Height="84" Background="AntiqueWhite" Margin="0,-7,0,0">
-                <CheckBox x:ConnectionId='13' x:Name="cbEnvironmental" Content="Environmental" HorizontalAlignment="Left" Margin="20,5,0,0" VerticalAlignment="Top"/>
-                <CheckBox x:ConnectionId='14' x:Name="cbVegetation" Content="Vegetation" HorizontalAlignment="Left" Margin="150,5,0,0" VerticalAlignment="Top"/>
-                <CheckBox x:ConnectionId='15' x:Name="cbNonStandard" Content="Non-standard" HorizontalAlignment="Left" Margin="262,8,0,0" VerticalAlignment="Top"/>
-                <CheckBox x:ConnectionId='16' x:Name="cbROW" Content="ROW" HorizontalAlignment="Left" Margin="398,8,-18,0" VerticalAlignment="Top"/>
-                <CheckBox x:ConnectionId='17' x:Name="cbSimple" Content="Simple" HorizontalAlignment="Left" Margin="20,39,0,0" VerticalAlignment="Top"/>
-                <CheckBox x:ConnectionId='18' x:Name="cbAdditionalPole" Content="Additional Pole" HorizontalAlignment="Left" Margin="150,41,0,0" VerticalAlignment="Top"/>
-                <CheckBox x:ConnectionId='19' x:Name="cbReturn" Content="Return" HorizontalAlignment="Left" Margin="294,40,0,0" VerticalAlignment="Top"/>
+                <CheckBox x:ConnectionId='16' x:Name="cbEnvironmental" Content="Environmental" HorizontalAlignment="Left" Margin="20,5,0,0" VerticalAlignment="Top"/>
+                <CheckBox x:ConnectionId='17' x:Name="cbVegetation" Content="Vegetation" HorizontalAlignment="Left" Margin="150,5,0,0" VerticalAlignment="Top"/>
+                <CheckBox x:ConnectionId='18' x:Name="cbNonStandard" Content="Non-standard" HorizontalAlignment="Left" Margin="262,8,0,0" VerticalAlignment="Top"/>
+                <CheckBox x:ConnectionId='19' x:Name="cbROW" Content="ROW" HorizontalAlignment="Left" Margin="398,8,-18,0" VerticalAlignment="Top"/>
+                <CheckBox x:ConnectionId='20' x:Name="cbSimple" Content="Simple" HorizontalAlignment="Left" Margin="20,39,0,0" VerticalAlignment="Top"/>
+                <CheckBox x:ConnectionId='21' x:Name="cbAdditionalPole" Content="Additional Pole" HorizontalAlignment="Left" Margin="150,41,0,0" VerticalAlignment="Top"/>
+                <CheckBox x:ConnectionId='22' x:Name="cbReturn" Content="Return" HorizontalAlignment="Left" Margin="294,40,0,0" VerticalAlignment="Top"/>
             </Grid> 
             <Grid Height="30" Background="DarkGray"/>
             <TextBox x:ConnectionId='3' x:Name="txtPoleHeight" HorizontalAlignment="Left" Margin="204,6,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="31" Width="150" />
@@ -43,19 +43,21 @@
             <TextBox x:ConnectionId='5' x:Name="txtTransformerLoad" HorizontalAlignment="Left" Margin="204,6,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="31" Width="150" />
             <TextBlock x:ConnectionId='6' x:Name="txbTransformerLoad" HorizontalAlignment="Left" Margin="15,-29,0,0" TextWrapping="Wrap" Text="Transformer Loading:" VerticalAlignment="Top" FontSize="17.333"/>
             <Grid Height="121" Background="Lavender" Width="500">
-                <TextBlock x:ConnectionId='10' x:Name="txtTakePhoto" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Photos" VerticalAlignment="Top"/>
-                <Button x:ConnectionId='11' x:Name="btnAddPhoto" Content="Add Photo" HorizontalAlignment="Left" Margin="50,18,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.381,0.717"                           FontFamily="Comic Sans MS" FontSize="13.333" Foreground="Black" Background="#33342FD6"/>
-                <TextBlock x:ConnectionId='12' x:Name="txtBlkPhotos" HorizontalAlignment="Left" Margin="200,5,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="70" Height="70"/>
+                <TextBlock x:ConnectionId='13' x:Name="txtTakePhoto" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Photos" VerticalAlignment="Top"/>
+                <Button x:ConnectionId='14' x:Name="btnAddPhoto" Content="Add Photo" HorizontalAlignment="Left" Margin="50,18,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.381,0.717"                           FontFamily="Comic Sans MS" FontSize="13.333" Foreground="Black" Background="#33342FD6"/>
+                <TextBlock x:ConnectionId='15' x:Name="txtBlkPhotos" HorizontalAlignment="Left" Margin="200,5,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="70" Height="70"/>
             </Grid>
             <Grid Height="30" Background="DarkGray"/>
             <Grid Height="80" Background="Lavender">
-                <TextBox x:ConnectionId='8' x:Name="textBoxNotes" HorizontalAlignment="Left" Margin="52,29,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="406" Height="50"/>
-                <TextBlock x:ConnectionId='9' x:Name="textNotes" HorizontalAlignment="Left" Margin="10,4,0,0" TextWrapping="Wrap" Text="Add Notes" VerticalAlignment="Top" FontFamily="Segoe Print"/>
+                <TextBox x:ConnectionId='11' x:Name="textBoxNotes" HorizontalAlignment="Left" Margin="52,29,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="406" Height="50"/>
+                <TextBlock x:ConnectionId='12' x:Name="textNotes" HorizontalAlignment="Left" Margin="10,4,0,0" TextWrapping="Wrap" Text="Add Notes" VerticalAlignment="Top" FontFamily="Segoe Print"/>
             </Grid>
 
             <Grid Height="30" Background="DarkGray"/>
-            <Button x:ConnectionId='7' x:Name="btnAddPoleInfo" Content="Add to Database" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"                              Background="#33137A32" Width="150" Margin="83,0,67,0" FontFamily="Sylfaen" FontSize="17.333"/>
-
+            <Button x:ConnectionId='7' x:Name="btnAddPoleInfo" Content="Save" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"                              Background="#33137A32" Width="150" Margin="155,0,195,0" FontFamily="Sylfaen" FontSize="17.333"/>
+            <Button x:ConnectionId='8' x:Name="goBack" Content="Back" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"                      Background="#33137A32" Width="101" Margin="314,-35,85,0" FontFamily="Sylfaen" FontSize="17.333"/>
+            <Button x:ConnectionId='9' x:Name="New" Content="New" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"                   Background="#33137A32" Width="101" Margin="47,-35,352,0" FontFamily="Sylfaen" FontSize="17.333"/>
+            <TextBlock x:ConnectionId='10' x:Name="txtmsg" HorizontalAlignment="Left" Margin="47,-5,352,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Foreground="#FFF11717"/>
         </StackPanel>
     </Grid>
 </Page>

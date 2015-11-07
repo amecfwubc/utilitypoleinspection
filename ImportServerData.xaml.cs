@@ -29,8 +29,8 @@ namespace AmecFWUPI
         string path;
         public static SQLiteConnectionWithLock conn;
         public static SQLiteAsyncConnection dbAsyncConnection;
-        string URI = "http://desktop-9bmhfp2:88/api/poleinfo?UserName=";
-        string URIImage = "http://desktop-9bmhfp2:88/api/PoleImage/Get?ImagePath=";
+        //string URI = "http://desktop-9bmhfp2:88/api/poleinfo?UserName=";
+        //string URIImage = "http://desktop-9bmhfp2:88/api/PoleImage/Get?ImagePath=";
 
         public ImportServerData()
         {
@@ -49,15 +49,19 @@ namespace AmecFWUPI
                 int totalrecord = 0;
                 string ImportStatus = "";
                 ///all data show from api:
+                progressRing1.IsActive = true;
 
                 using (var client = new HttpClient())
                 {
-                    URI = URI + LoginInfo.LoginUserName;
+                    App.URILogin = App.URILogin + LoginInfo.LoginUserName;
                     
-                    using (var response = await client.GetAsync(URI))
+                    using (var response = await client.GetAsync(App.URILogin))
                     {
                         if (response.IsSuccessStatusCode)
                         {
+
+                            
+
                             var productJsonString = await response.Content.ReadAsStringAsync();
 
                             var SqliteData = await dbAsyncConnection.QueryAsync<PoleInfo>("select *from PoleInfo");
@@ -68,25 +72,14 @@ namespace AmecFWUPI
 
                             foreach (var itm in SqlServerData)
                             {
+                                
+                                //progressBar1.Visibility = Visibility.Visible;
                                 var childobj = SqliteData.SingleOrDefault(p => p.poleID == itm.PoleID);
                                 if (childobj == null)
                                 {
 
                                     var objpole = new PoleInfo();
                                     objpole.poleID = itm.PoleID;
-
-
-                                    //string POleTypeName = "";
-                                    //switch (itm.TypeID)
-                                    //{
-                                    //    case 4:
-                                    //        POleTypeName = "Simple";
-                                    //        break;
-
-                                    //    case 5:
-                                    //        POleTypeName = "Non Standard";
-                                    //        break;
-                                    //}
 
                                     objpole.poleType = itm.TypeName;
                                     if (itm.TaskAddeddate != null)
@@ -106,18 +99,16 @@ namespace AmecFWUPI
                                     objpole.userid = LoginInfo.LoginUserID;
                                     objpole.TaskAssainUserID = (int)itm.TaskAssainUserID;
                                     objpole.TypeID = (int)itm.TypeID;
-                                    //GetImageByte(itm.ImageMapPath);
-                                    //Save Image
-
+                                    
                                     using (var client2 = new HttpClient())
                                     {
-                                        using (var response2 = await client2.GetAsync(URIImage + itm.ImageMapPath))
+                                        using (var response2 = await client2.GetAsync(App.URIImage + itm.ImageMapPath))
                                         {
                                             if (response2.IsSuccessStatusCode)
                                             {
                                                 string ImageName = itm.PoleID+".jpg";
                                                                                             
-                                                StorageFile file = await ApplicationData.Current.LocalFolder.CreateFileAsync(ImageName, CreationCollisionOption.GenerateUniqueName);
+                                                StorageFile file = await ApplicationData.Current.LocalFolder.CreateFileAsync(ImageName, CreationCollisionOption.ReplaceExisting);
 
                                                 var byte2 = await response2.Content.ReadAsByteArrayAsync();
                                                                                                
@@ -132,8 +123,8 @@ namespace AmecFWUPI
                                 }
 
                             }
-
-
+                            progressRing1.IsActive = false;
+                            //progressBar1.Visibility = Visibility.Collapsed;
                         }
                     }
                 }
@@ -158,143 +149,15 @@ namespace AmecFWUPI
         {
             dbAsyncConnection.InsertAsync(obj);
         }
-        async private void GetImageByte(string imagePath)
-        {
-            byte[] bytes;
-            using (var client2 = new HttpClient())
-            {
-                using (var response2 = await client2.GetAsync(URIImage + imagePath))
-                {
-                    if (response2.IsSuccessStatusCode)
-                    {
-
-                        var data = await response2.Content.ReadAsStreamAsync();
-                        //Image image = Image.FromStream(data);
-                        //byte[] byte = Encoding.Unicode.GetBytes(data);
-                        using (var br = new BinaryReader(data))
-                        {
-                            using (var ms = new MemoryStream())
-                            {
-                                var lineBuffer = br.ReadBytes(1024);
-
-                                while (lineBuffer.Length > 0)
-                                {
-                                    ms.Write(lineBuffer, 0, lineBuffer.Length);
-                                    lineBuffer = br.ReadBytes(1024);
-                                }
-
-                                bytes = new byte[(int)ms.Length];
-                                ms.Position = 0;
-                                ms.Read(bytes, 0, bytes.Length);
-                            }
-                        }
-
-                        
-                        //StorageFile sampleFile = await ApplicationData.Current.LocalFolder.CreateFileAsync("userImage.jpg", CreationCollisionOption.ReplaceExisting);
-                        //await FileIO.WriteBytesAsync(sampleFile, bytes);
-                        //var stream = await sampleFile.OpenAsync(Windows.Storage.FileAccessMode.Read);
-
-                    }
-                }
-            }
-            //get response
-            //var response = await request.GetResponseAsync();
-            
-
-        }
-        async Task<BitmapImage> convertBytesToBitmapAsync(byte[] bytes)
-        {
-            //convert to bitmap
-            var bitmapImage = new BitmapImage();
-            var stream = new InMemoryRandomAccessStream();
-            stream.WriteAsync(bytes.AsBuffer());
-            stream.Seek(0);
-
-            //display
-            bitmapImage.SetSource(stream);
-
-            return bitmapImage;
-        }
+        
+        
 
         private void goBack_Click(object sender, RoutedEventArgs e)
         {
             Frame.GoBack();
             MetroEventSource.Log.Debug("Goback to MainPage");
         }
-
-
-        private  async  void GetAllPoleInfo()
-        {
-            ///all data show from api:
-
-            using (var client = new HttpClient())
-            {
-                using (var response = await client.GetAsync(URI))
-                {
-                    if (response.IsSuccessStatusCode)
-                    {
-                        var productJsonString = await response.Content.ReadAsStringAsync();
-                       var data = JsonConvert.DeserializeObject<PoelInfo[]>(productJsonString).ToList();
-
-
-                    }
-                }
-            }
-
-
-            ////Single data show from Api
-            string id = "21";
-            using (var client = new HttpClient())
-            {
-                using (var response = await client.GetAsync(URI+"/"+id))
-                {
-                    if (response.IsSuccessStatusCode)
-                    {
-                        var productJsonString = await response.Content.ReadAsStringAsync();
-                        var data = JsonConvert.DeserializeObject<PoelInfo>(productJsonString);
-
-
-                    }
-                }
-            }
-
-        }
-
-        private int GetPoleTypeId(string PoleType)
-        {
-            int PoleTypeID = 0;
-            if (PoleType == "Additional Pole")
-            {
-                PoleTypeID = 11;
-            }
-            else if (PoleType == "Non standard")
-            {
-                PoleTypeID = 2;
-            }
-            else if (PoleType == "Simple")
-            {
-                PoleTypeID = 10;
-            }
-            else if (PoleType == "Enviromental")
-            {
-                PoleTypeID = 12;
-            }
-
-            else if (PoleType == "Row")
-            {
-                PoleTypeID = 12;
-            }
-            else if (PoleType == "Vegetation")
-            {
-                PoleTypeID = 14;
-            }
-            else if (PoleType == "Return")
-            {
-                PoleTypeID = 15;
-            }
-            return PoleTypeID;
-        }
-
+        
     }
 
 

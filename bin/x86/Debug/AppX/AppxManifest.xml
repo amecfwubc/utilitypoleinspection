@@ -7,11 +7,11 @@
 
     For more information on package manifest files, see http://go.microsoft.com/fwlink/?LinkID=241727
   -->
-  <Identity Name="f867452b-a946-4cec-bc0d-a7793b639c29" Publisher="CN=lbugn" Version="1.0.0.0" ProcessorArchitecture="x86" />
+  <Identity Name="AmecFWUPI" Publisher="CN=lbugn" Version="1.0.1.0" ProcessorArchitecture="x86" />
   <mp:PhoneIdentity PhoneProductId="f867452b-a946-4cec-bc0d-a7793b639c29" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>AmecFWUPI</DisplayName>
-    <PublisherDisplayName>YourName</PublisherDisplayName>
+    <PublisherDisplayName>imran</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
   <Dependencies>

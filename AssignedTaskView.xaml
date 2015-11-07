@@ -25,9 +25,9 @@
                     Height="965"
                     VerticalAlignment="Center" Margin="0,0,0,-5">
 
-            <ComboBox x:Name="drpPoleID" HorizontalAlignment="Left" Margin="590,155,0,21"  VerticalAlignment="Top" Height="31" Width="200" SelectionChanged="drpPoleID_SelectionChanged" />
-            <Button x:Name="vieW" Content="View" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="View_data" Background="#FF575074" Width="101" Margin="810,-75,529,0" FontFamily="Sylfaen" FontSize="17.333" Height="30" BorderBrush="#FF160202" Foreground="#FFFBFAFA" RequestedTheme="Light"/>
-            <TextBlock x:Name="txbLoginID" HorizontalAlignment="Left" Margin="489,-50,0,0" TextWrapping="Wrap" Text="Pole ID:" VerticalAlignment="Top" FontSize="17.333" />
+            <ComboBox x:Name="drpPoleID" HorizontalAlignment="Left" Margin="536,155,0,21"  VerticalAlignment="Top" Height="31" Width="200" SelectionChanged="drpPoleID_SelectionChanged" />
+            <Button x:Name="vieW" Content="View" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="View_data" Background="#FF575074" Width="101" Margin="771,-75,568,0" FontFamily="Sylfaen" FontSize="17.333" Height="30" BorderBrush="#FF160202" Foreground="#FFFBFAFA" RequestedTheme="Light"/>
+            <TextBlock x:Name="txbLoginID" HorizontalAlignment="Left" Margin="459,-50,0,0" TextWrapping="Wrap" Text="Pole ID:" VerticalAlignment="Top" FontSize="17.333" />
             <Grid Height="46" Background="AntiqueWhite" Margin="0,-7,0,0">
                 <CheckBox x:Name="cbEnvironmental" Content="Environmental" HorizontalAlignment="Left" Margin="284,5,0,0" VerticalAlignment="Top"/>
                 <CheckBox x:Name="cbVegetation" Content="Vegetation" HorizontalAlignment="Left" Margin="414,5,0,0" VerticalAlignment="Top"/>
@@ -61,8 +61,9 @@
             <!--<Button x:Name="btnAddPoleInfo" Content="Add to Database" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="btnAddPoleInfo_Click" Background="#33137A32" Width="150" Margin="577,0,713,0" FontFamily="Sylfaen" FontSize="17.333"/>-->
             <Button x:Name="goBack" Content="Back" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="goBack_Click" Background="#FF114905" Width="101" Margin="290,-1050,1049,210" FontFamily="Sylfaen" FontSize="17.333" Height="30" RequestedTheme="Dark" BorderBrush="#FF240303"/>
             <!--<CheckBox x:Name="writeServer" Content="Write to Server" HorizontalAlignment="Left" Margin="1060,-645,0,0" VerticalAlignment="Top"/>-->
-            <Button x:Name="edit" Content="Update" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Edit_data" Background="#FF575074" Width="101" Margin="924,-1258,415,0" FontFamily="Sylfaen" FontSize="17.333" Height="30" BorderBrush="#FF160202" Foreground="#FFFBFAFA" RequestedTheme="Light"/>
-            <TextBlock x:Name="txtmsg" HorizontalAlignment="Right" Margin="47,-640,252,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Foreground="#FFF11717"/>
+            <Button x:Name="edit" Content="Local Update" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Local_Update" Background="#FF575074" Margin="897,-1258,428,0" FontFamily="Sylfaen" FontSize="17.333" Height="30" BorderBrush="#FF160202" Foreground="#FFFBFAFA" RequestedTheme="Light"/>
+            <Button x:Name="edit1" Content="Update to Server" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Server_Update" Background="#FF575074" Margin="1032,-1258,257,0" FontFamily="Sylfaen" FontSize="17.333" Height="30" BorderBrush="#FF160202" Foreground="#FFFBFAFA" RequestedTheme="Light"/>
+            <TextBlock x:Name="txtmsg" HorizontalAlignment="Right" Margin="47,-640,102,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Foreground="#FFF11717"/>
         </StackPanel>
     </Grid>
 </Page>
